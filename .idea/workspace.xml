@@ -7,12 +7,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1fc610b0-4aaa-4495-9e59-7f6eab52958a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/web/details.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/billotr_jee.iml" beforeDir="false" afterPath="$PROJECT_DIR$/billotr_jee.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jsp File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -25,7 +36,9 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="1UTj44ijMcGnCVsMdaM6WvbptnZ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -37,6 +50,10 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="/opt/tomcat/latest/lib/servlet-api.jar!/" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.27" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.27" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
@@ -208,17 +225,93 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575387284607</updated>
-      <workItem from="1575387285877" duration="343000" />
+      <workItem from="1575387285877" duration="835000" />
+      <workItem from="1575443548037" duration="2490000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="415" y="144" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575387329621">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="415" y="144" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1575387329621" />
+    <state x="735" y="218" width="430" height="483" key="FileChooserDialogImpl" timestamp="1575446241543">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="735" y="218" width="430" height="483" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1575446241543" />
+    <state width="1291" height="298" key="GridCell.Tab.0.bottom" timestamp="1575446403577">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1291" height="298" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1575446403577" />
+    <state width="1291" height="298" key="GridCell.Tab.0.center" timestamp="1575446403577">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1291" height="298" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1575446403577" />
+    <state width="1291" height="298" key="GridCell.Tab.0.left" timestamp="1575446403577">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1291" height="298" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1575446403577" />
+    <state width="1291" height="298" key="GridCell.Tab.0.right" timestamp="1575446403577">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1291" height="298" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1575446403577" />
+    <state width="1291" height="298" key="GridCell.Tab.1.bottom" timestamp="1575446403440">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1291" height="298" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1575446403440" />
+    <state width="1291" height="298" key="GridCell.Tab.1.center" timestamp="1575446403440">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1291" height="298" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1575446403440" />
+    <state width="1291" height="298" key="GridCell.Tab.1.left" timestamp="1575446403440">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1291" height="298" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1575446403440" />
+    <state width="1291" height="298" key="GridCell.Tab.1.right" timestamp="1575446403440">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1291" height="298" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1575446403440" />
+    <state width="1291" height="298" key="GridCell.Tab.2.bottom" timestamp="1575446403441">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1291" height="298" key="GridCell.Tab.2.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1575446403441" />
+    <state width="1291" height="298" key="GridCell.Tab.2.center" timestamp="1575446403440">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1291" height="298" key="GridCell.Tab.2.center/0.0.1920.1080@0.0.1920.1080" timestamp="1575446403440" />
+    <state width="1291" height="298" key="GridCell.Tab.2.left" timestamp="1575446403440">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1291" height="298" key="GridCell.Tab.2.left/0.0.1920.1080@0.0.1920.1080" timestamp="1575446403440" />
+    <state width="1291" height="298" key="GridCell.Tab.2.right" timestamp="1575446403441">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1291" height="298" key="GridCell.Tab.2.right/0.0.1920.1080@0.0.1920.1080" timestamp="1575446403441" />
+    <state width="1291" height="335" key="GridCell.Tab.3.bottom" timestamp="1575444559190">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1291" height="335" key="GridCell.Tab.3.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1575444559190" />
+    <state width="1291" height="335" key="GridCell.Tab.3.center" timestamp="1575444559190">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1291" height="335" key="GridCell.Tab.3.center/0.0.1920.1080@0.0.1920.1080" timestamp="1575444559190" />
+    <state width="1291" height="335" key="GridCell.Tab.3.left" timestamp="1575444559190">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1291" height="335" key="GridCell.Tab.3.left/0.0.1920.1080@0.0.1920.1080" timestamp="1575444559190" />
+    <state width="1291" height="335" key="GridCell.Tab.3.right" timestamp="1575444559190">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1291" height="335" key="GridCell.Tab.3.right/0.0.1920.1080@0.0.1920.1080" timestamp="1575444559190" />
+    <state x="440" y="64" width="1030" height="844" key="SettingsEditor" timestamp="1575446244916">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="440" y="64" width="1030" height="844" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1575446244916" />
   </component>
 </project>
