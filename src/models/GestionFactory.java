@@ -55,7 +55,7 @@ public class GestionFactory {
 
 	// Retourne un étudiant en fonction de son id 
 	public static Etudiant getEtudiantById(int id) {
-		return LISTE_ID_ETUDIANTS.get(id);
+			return LISTE_ID_ETUDIANTS.get(id);
 	}
 
 	// Retourne le nombre d'absences d'un etudiant en fonction de son id 

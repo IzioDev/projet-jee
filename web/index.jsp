@@ -15,7 +15,7 @@
 <body>
   <% for (Etudiant etudiant : etudiants) { %>
     <div>
-      <a href="details.jsp?etudiantId=<%=etudiant.getId()%>"><%= etudiant.getNom() + " " + etudiant.getPrenom() %>
+      <a href="${pageContext.request.contextPath}/servlettraitementdetails?etudiantId=<%=etudiant.getId()%>"><%= etudiant.getNom() + " " + etudiant.getPrenom() %>
       </a>
     </div>
   <%}%>
