@@ -3,4 +3,35 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+    <display-name>Gestion des étudiants</display-name>
+
+    <!-- Titre de l'application -->
+    <context-param>
+        <param-name>title</param-name>
+        <param-value>Gestion des étudiants</param-value>
+    </context-param>
+
+    <!-- URLs communes aux vues -->
+
+    <!--========= Gestion =========== -->
+    <!-- Servlet controleur -->
+    <servlet>
+        <servlet-name>controller</servlet-name>
+        <servlet-class>controllers.mainController</servlet-class>
+        <init-param>
+            <param-name>indexUri</param-name>
+            <param-value>/WEB-INF/JSP/index.jsp</param-value>
+        </init-param>
+    </servlet>
+
+    <!-- Mapping URL/Servlet -->
+    <servlet-mapping>
+        <servlet-name>controller</servlet-name>
+        <url-pattern>/do/*</url-pattern>
+    </servlet-mapping>
+
+    <!--  fichiers d'accueil -->
+    <welcome-file-list>
+        <welcome-file>do</welcome-file>
+    </welcome-file-list>
 </web-app>
