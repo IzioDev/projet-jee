@@ -6,7 +6,7 @@
 
 <html>
 <head>
-    <title>Title</title>
+    <title>Détail de <%=etudiant.getPrenom()%> <%=etudiant.getNom()%></title>
 </head>
 <body>
     <jsp:include page='<%= application.getInitParameter("navbar")%>' />

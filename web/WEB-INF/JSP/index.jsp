@@ -8,6 +8,7 @@
 %>
 
 <html>
+<title>Gestion des étudiants</title>
 <body>
     <jsp:include page='<%= application.getInitParameter("navbar")%>' />
 

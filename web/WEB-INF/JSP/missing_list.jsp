@@ -1,16 +1,28 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: izio
-  Date: 17/12/2019
-  Time: 14:20
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="models.Etudiant" %>
+<%@ page import="java.util.Collection" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%
+    Collection<Etudiant> etudiants = (Collection<Etudiant>) request.getAttribute("etudiants");
+%>
+
 <html>
 <head>
-    <title>Title</title>
+    <title>Absence des étudiants</title>
 </head>
 <body>
-    <jsp:include page='<%= application.getInitParameter("navbar")%>' />
+<jsp:include page='<%= application.getInitParameter("navbar")%>' />
+<div style="margin-left: 10%; margin-right: 10%;">
+    <%
+        for(Etudiant etudiant: etudiants) {
+    %>
+    <p><%= etudiant.getPrenom() + " " + etudiant.getNom() %> : <span style="font-weight: bold"><%=etudiant.getNbAbsence()%> abscence(s)</span>
+        <a href="${pageContext.request.contextPath}/do/studentDetails?studentId=<%=etudiant.getId()%>">Détails</a>
+    </p>
+
+    <%
+        }
+    %>
+</div>
 </body>
 </html>

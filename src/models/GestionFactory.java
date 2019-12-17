@@ -42,7 +42,7 @@ public class GestionFactory {
 
 		listEtudiantNotesTemp.put(listEtudiants.get(0).getId(), 18);
 
-		listEtudiantNotesTemp.put(listEtudiants.get(1).getId(), 1200);
+		listEtudiantNotesTemp.put(listEtudiants.get(1).getId(), 8);
 
 		return listEtudiantNotesTemp;
 	}
