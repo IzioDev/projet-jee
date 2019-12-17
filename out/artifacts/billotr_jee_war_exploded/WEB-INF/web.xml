@@ -12,16 +12,57 @@
     </context-param>
 
     <!-- URLs communes aux vues -->
+    <context-param>
+        <param-name>navbar</param-name>
+        <param-value>/WEB-INF/JSP/navbar.jsp</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>footer</param-name>
+        <param-value>/WEB-INF/JSP/footer.jsp</param-value>
+    </context-param>
 
     <!--========= Gestion =========== -->
     <!-- Servlet controleur -->
     <servlet>
         <servlet-name>controller</servlet-name>
         <servlet-class>controllers.mainController</servlet-class>
+
         <init-param>
             <param-name>indexUri</param-name>
             <param-value>/WEB-INF/JSP/index.jsp</param-value>
         </init-param>
+
+        <init-param>
+            <param-name>studentEdit</param-name>
+            <param-value>/WEB-INF/JSP/student_edit.jsp</param-value>
+        </init-param>
+
+        <init-param>
+            <param-name>studentDetails</param-name>
+            <param-value>/WEB-INF/JSP/student_details.jsp</param-value>
+        </init-param>
+
+        <init-param>
+            <param-name>marksList</param-name>
+            <param-value>/WEB-INF/JSP/marks_list.jsp</param-value>
+        </init-param>
+
+        <init-param>
+            <param-name>marksEdit</param-name>
+            <param-value>/WEB-INF/JSP/marks_edit.jsp</param-value>
+        </init-param>
+
+        <init-param>
+            <param-name>missingList</param-name>
+            <param-value>/WEB-INF/JSP/missing_list.jsp</param-value>
+        </init-param>
+
+        <init-param>
+            <param-name>missingEdit</param-name>
+            <param-value>/WEB-INF/JSP/missing_edit.jsp</param-value>
+        </init-param>
+
     </servlet>
 
     <!-- Mapping URL/Servlet -->

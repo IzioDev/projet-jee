@@ -19,10 +19,10 @@ public class ServletTraitementDetails extends HttpServlet {
 
         Etudiant etudiant = GestionFactory.getEtudiantById(Integer.parseInt(request.getParameter("etudiantId")));
         int missingNumber = GestionFactory.getAbsencesByEtudiantId(Integer.parseInt(request.getParameter("etudiantId")));
-        etudiant.setNbAbscence(missingNumber);
+        etudiant.setNbAbsence(missingNumber);
 
         request.setAttribute("etudiant", etudiant);
 
-        getServletContext().getRequestDispatcher("/details.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/student_details.jsp").forward(request, response);
     }
 }

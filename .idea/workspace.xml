@@ -7,11 +7,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1fc610b0-4aaa-4495-9e59-7f6eab52958a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/controllers/mainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/JSP/footer.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/JSP/marks_edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/JSP/marks_list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/JSP/missing_edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/JSP/missing_list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/JSP/navbar.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/JSP/student_edit.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/JSP/details.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/JSP/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/JSP/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/classes/controllers/mainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/classes/controllers/mainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/classes/servlets/ServletTraitementDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/classes/servlets/ServletTraitementDetails.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/billotr_jee/controllers/mainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/billotr_jee/controllers/mainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/billotr_jee/servlets/ServletTraitementDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/billotr_jee/servlets/ServletTraitementDetails.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/mainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/mainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Etudiant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/GestionFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlets/ServletTraitementDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlets/ServletTraitementDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/JSP/details.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/JSP/student_details.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/JSP/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/JSP/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/details.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/JSP/details.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/JSP/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +38,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -66,6 +83,7 @@
     <configuration name="GlassFish" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.194.0" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
         <artifact name="billotr_jee:war exploded">
           <settings />
@@ -289,6 +307,11 @@
               </path>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="GlassFish Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
@@ -313,6 +336,7 @@
       <workItem from="1576498576110" duration="1328000" />
       <workItem from="1576500285342" duration="2001000" />
       <workItem from="1576572267495" duration="759000" />
+      <workItem from="1576584612693" duration="9175000" />
     </task>
     <servers />
   </component>
@@ -335,46 +359,50 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="687" y="90" width="544" height="740" key="#Unnamed/0.0.1920.1080@0.0.1920.1080" timestamp="1576498779112" />
-    <state x="397" y="-12" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576500960583">
+    <state x="-3" y="144" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576588150719">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="397" y="-12" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1576500960583" />
-    <state x="729" y="166" width="430" height="483" key="FileChooserDialogImpl" timestamp="1576572279322">
+    <state x="-3" y="144" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1576588150719" />
+    <state x="690" y="237" width="530" height="498" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1576591158755">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="729" y="166" width="430" height="483" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1576572279322" />
-    <state width="1291" height="-12" key="GridCell.Tab.0.bottom" timestamp="1576573059349">
+    <state x="690" y="237" width="530" height="498" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1576591158755" />
+    <state x="723" y="114" width="430" height="483" key="FileChooserDialogImpl" timestamp="1576587835308">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1291" height="-12" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1576573059349" />
-    <state width="1291" height="-12" key="GridCell.Tab.0.center" timestamp="1576573059348">
+    <state x="723" y="114" width="430" height="483" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1576587835308" />
+    <state width="1291" height="314" key="GridCell.Tab.0.bottom" timestamp="1576593688970">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1291" height="-12" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1576573059348" />
-    <state width="1291" height="-12" key="GridCell.Tab.0.left" timestamp="1576573059348">
+    <state width="1291" height="314" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1576593688970" />
+    <state width="1291" height="314" key="GridCell.Tab.0.center" timestamp="1576593688965">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1291" height="-12" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1576573059348" />
-    <state width="1291" height="-12" key="GridCell.Tab.0.right" timestamp="1576573059349">
+    <state width="1291" height="314" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1576593688965" />
+    <state width="1291" height="314" key="GridCell.Tab.0.left" timestamp="1576593688964">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1291" height="-12" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1576573059349" />
-    <state width="1291" height="357" key="GridCell.Tab.1.bottom" timestamp="1576500254418">
+    <state width="1291" height="314" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1576593688964" />
+    <state width="1291" height="314" key="GridCell.Tab.0.right" timestamp="1576593688966">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1291" height="357" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1576500254418" />
-    <state width="1291" height="357" key="GridCell.Tab.1.center" timestamp="1576500254417">
+    <state width="1291" height="314" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1576593688966" />
+    <state width="1291" height="314" key="GridCell.Tab.1.bottom" timestamp="1576593688843">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1291" height="357" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1576500254417" />
-    <state width="1291" height="357" key="GridCell.Tab.1.left" timestamp="1576500254417">
+    <state width="1291" height="314" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1576593688843" />
+    <state width="1291" height="314" key="GridCell.Tab.1.center" timestamp="1576593688843">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1291" height="357" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1576500254417" />
-    <state width="1291" height="357" key="GridCell.Tab.1.right" timestamp="1576500254418">
+    <state width="1291" height="314" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1576593688843" />
+    <state width="1291" height="314" key="GridCell.Tab.1.left" timestamp="1576593688842">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1291" height="357" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1576500254418" />
+    <state width="1291" height="314" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1576593688842" />
+    <state width="1291" height="314" key="GridCell.Tab.1.right" timestamp="1576593688843">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1291" height="314" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1576593688843" />
     <state width="1291" height="298" key="GridCell.Tab.2.bottom" timestamp="1575446492271">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

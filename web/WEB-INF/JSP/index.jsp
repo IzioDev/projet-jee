@@ -1,23 +1,30 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@page import="models.GestionFactory" %>
-<%@ page import="java.util.ArrayList" %>
 <%@ page import="models.Etudiant" %>
 <%@ page import="java.util.Collection" %>
+<%@ page import="models.GestionFactory" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%!
     Collection<Etudiant> etudiants = GestionFactory.getEtudiants();
 %>
 
 <html>
-<head>
-    <title>$Title$</title>
-</head>
 <body>
-  <% for (Etudiant etudiant : etudiants) { %>
-    <div>
-      <a href="${pageContext.request.contextPath}/servlettraitementdetails?etudiantId=<%=etudiant.getId()%>"><%= etudiant.getNom() + " " + etudiant.getPrenom() %>
-      </a>
+    <jsp:include page='<%= application.getInitParameter("navbar")%>' />
+
+    <div style="margin-left: 10%; margin-right: 10%;">
+        <p>Cliquez sur un étudiant pour voir le détail de l'étudiant.</p>
+
+        <div style="margin-top: 12px">
+            <% for (Etudiant etudiant : etudiants) { %>
+            <div>
+                <a href="${pageContext.request.contextPath}/do/studentDetails?studentId=<%=etudiant.getId()%>"><%= etudiant.getNom() + " " + etudiant.getPrenom() %>
+                </a>
+            </div>
+            <%}%>
+        </div>
+
     </div>
-  <%}%>
+
+    <jsp:include page='<%= application.getInitParameter("footer")%>' />
 </body>
 </html>

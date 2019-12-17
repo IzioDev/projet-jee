@@ -5,12 +5,13 @@ public class Etudiant {
 	private Integer id;
 	private String prenom;
 	private String nom;
-	private Integer nbAbscence;
+	private int nbAbsence;
+	private int mean;
 	
 	public Etudiant() {
 		super();
 	}
-	
+
 	public Etudiant(Integer id, String prenom, String nom) {
 		super();
 		this.id = id;
@@ -42,11 +43,19 @@ public class Etudiant {
 		this.nom = nom;
 	}
 
-	public Integer getNbAbscence() {
-		return nbAbscence;
+	public int getNbAbsence() {
+		return nbAbsence;
 	}
 
-	public void setNbAbscence(Integer nbAbscence) {
-		this.nbAbscence = nbAbscence;
+	public void setNbAbsence(int nbAbsence) {
+		this.nbAbsence = nbAbsence;
+	}
+
+	public int getMean() {
+		return mean;
+	}
+
+	public void setMean(int mean) {
+		this.mean = mean;
 	}
 }
