@@ -11,6 +11,5 @@
     <title>Title</title>
 </head>
 <body>
-    <jsp:include page='<%= application.getInitParameter("navbar")%>' />
 </body>
 </html>

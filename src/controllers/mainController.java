@@ -21,6 +21,7 @@ public class mainController extends HttpServlet {
   private String marksEdit;
   private String missingList;
   private String missingEdit;
+  private String layout;
 
   // Logger
   Logger logger = Logger.getLogger(getClass().getName());
@@ -34,6 +35,7 @@ public class mainController extends HttpServlet {
     marksEdit = getInitParameter("marksEdit");
     missingList = getInitParameter("missingList");
     missingEdit = getInitParameter("missingEdit");
+    layout = getInitParameter("layout");
   }
 
   public void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -113,7 +115,8 @@ public class mainController extends HttpServlet {
                       HttpServletResponse response) throws ServletException, IOException {
 
     ServletContext sc = getServletContext();
-    RequestDispatcher rd = sc.getRequestDispatcher(url);
+    request.setAttribute("content", url);
+    RequestDispatcher rd = sc.getRequestDispatcher(this.layout);
     rd.forward(request, response);
   }
 }

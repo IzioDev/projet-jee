@@ -10,8 +10,6 @@
 <html>
 <title>Gestion des étudiants</title>
 <body>
-    <jsp:include page='<%= application.getInitParameter("navbar")%>' />
-
     <div style="margin-left: 10%; margin-right: 10%;">
         <p>Cliquez sur un étudiant pour voir le détail de l'étudiant.</p>
 

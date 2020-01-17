@@ -7,6 +7,10 @@
         <element id="directory" name="classes">
           <element id="module-output" name="billotr_jee" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="org.eclipse.persistence:javax.persistence:2.2.1" />
+          <element id="library" level="project" name="mysql:mysql-connector-java:5.1.48" />
+        </element>
       </element>
     </root>
   </artifact>

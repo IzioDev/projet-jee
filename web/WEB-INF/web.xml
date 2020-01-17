@@ -63,6 +63,11 @@
             <param-value>/WEB-INF/JSP/missing_edit.jsp</param-value>
         </init-param>
 
+        <init-param>
+            <param-name>layout</param-name>
+            <param-value>/WEB-INF/JSP/layout.jsp</param-value>
+        </init-param>
+
     </servlet>
 
     <!-- Mapping URL/Servlet -->

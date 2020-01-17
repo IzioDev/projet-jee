@@ -11,7 +11,6 @@
     <title>Absence des étudiants</title>
 </head>
 <body>
-<jsp:include page='<%= application.getInitParameter("navbar")%>' />
 <div style="margin-left: 10%; margin-right: 10%;">
     <%
         for(Etudiant etudiant: etudiants) {

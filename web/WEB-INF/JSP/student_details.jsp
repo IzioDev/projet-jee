@@ -9,7 +9,6 @@
     <title>Détail de <%=etudiant.getPrenom()%> <%=etudiant.getNom()%></title>
 </head>
 <body>
-    <jsp:include page='<%= application.getInitParameter("navbar")%>' />
 
     <div style="margin-right: 10%; margin-left: 10%;">
         <p>Prénom :  <jsp:getProperty name="etudiant" property="prenom" /></p>
