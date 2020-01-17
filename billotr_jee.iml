@@ -17,7 +17,7 @@
         <setting name="provider-name" value="EclipseLink" />
         <datasource-mapping>
           <factory-entry name="NewPersistenceUnit" />
-          <factory-entry name="Projet_JPA_MYSQL" />
+          <factory-entry name="Projet_JPA_MYSQL" value="fe02d147-5d67-4a97-b7ad-18db82c33354" />
         </datasource-mapping>
         <naming-strategy-map />
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/META-INF/persistence.xml" />

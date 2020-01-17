@@ -96,21 +96,36 @@ public class mainController extends HttpServlet {
         break;
       case "/moduleEdit":
         doModuleEdit(request, response);
+        break;
+      case "/moduleDelete":
+        doModuleDelete(request, response);
+        break;
       default:
         throw new ServletException();
     }
   }
 
+  private void doModuleDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    String stringId = request.getParameter("id");
+    Integer id = Integer.valueOf(stringId);
+
+    ModuleDAO.remove(id);
+    response.sendRedirect(request.getContextPath() + "/do/moduleList");
+  }
+
+
   private void doModuleEdit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     String stringId = request.getParameter("id");
 
     String moduleNameParameter = request.getParameter("name");
-    String moduleCoeffParameter = request.getParameter("coeff");
 
-    if (moduleNameParameter != null && moduleCoeffParameter != null) {
+    // String moduleCoeffParameter = request.getParameter("coeff");
+    // && moduleCoeffParameter != null
+
+    if (moduleNameParameter != null) {
       ModuleDAO.create(moduleNameParameter);
 
-      doModuleList(request, response);
+      response.sendRedirect(request.getContextPath() + "/do/moduleList");
       return;
     }
 

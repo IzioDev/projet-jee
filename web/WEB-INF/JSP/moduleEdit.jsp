@@ -16,10 +16,10 @@
         <input name="name" type="text" placeholder="MI5"/>
     </label>
 
-    <label>
-        Coefficiant :
-        <input name="coeff" type="number" placeholder="25"/>
-    </label>
+<%--    <label>--%>
+<%--        Coefficiant :--%>
+<%--        <input name="coeff" type="number" placeholder="25"/>--%>
+<%--    </label>--%>
 
     <button type="submit"><%= isCreation? "Créer": "Modifier" %></button>
 
