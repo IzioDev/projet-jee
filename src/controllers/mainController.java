@@ -1,6 +1,7 @@
 package controllers;
 
 import models.Etudiant;
+import models.EtudiantDAO;
 import models.GestionFactory;
 
 import javax.servlet.RequestDispatcher;
@@ -36,6 +37,8 @@ public class mainController extends HttpServlet {
     missingList = getInitParameter("missingList");
     missingEdit = getInitParameter("missingEdit");
     layout = getInitParameter("layout");
+
+    GestionFactory.open();
   }
 
   public void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -57,22 +60,30 @@ public class mainController extends HttpServlet {
     System.out.println("Action:" + action);
 
     // Process action
-    if (action.equals("/index")) {
-      doIndex(request, response);
-    } else if (action.equals("/studentDetails")) {
-      doStudentDetails(request, response);
-    } else if (action.equals("/studentEdit")) {
-      doStudentEdit(request, response);
-    } else if (action.equals("/marksList")) {
-      doMarksList(request, response);
-    } else if (action.equals("/marksEdit")) {
-      doMarksEdit(request, response);
-    } else if (action.equals("/missingList")) {
-      doMissingList(request, response);
-    } else if (action.equals("/missingEdit")) {
-      doMissingEdit(request, response);
-    } else {
-      throw new ServletException();
+    switch (action) {
+      case "/index":
+        doIndex(request, response);
+        break;
+      case "/studentDetails":
+        doStudentDetails(request, response);
+        break;
+      case "/studentEdit":
+        doStudentEdit(request, response);
+        break;
+      case "/marksList":
+        doMarksList(request, response);
+        break;
+      case "/marksEdit":
+        doMarksEdit(request, response);
+        break;
+      case "/missingList":
+        doMissingList(request, response);
+        break;
+      case "/missingEdit":
+        doMissingEdit(request, response);
+        break;
+      default:
+        throw new ServletException();
     }
   }
 
@@ -81,7 +92,8 @@ public class mainController extends HttpServlet {
   }
 
   private void doStudentDetails(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    Etudiant etudiant = GestionFactory.getEtudiantById(Integer.parseInt(request.getParameter("studentId")));
+    Integer etudiantId = Integer.parseInt(request.getParameter("studentId"));
+    Etudiant etudiant = EtudiantDAO.retrieveById(etudiantId);
 
     request.setAttribute("etudiant", etudiant);
     loadJSP(this.studentDetails, request, response);
@@ -92,7 +104,8 @@ public class mainController extends HttpServlet {
   }
 
   private void doMarksList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    request.setAttribute("etudiants", GestionFactory.getEtudiants());
+
+    request.setAttribute("etudiants", EtudiantDAO.getAll());
 
     loadJSP(this.marksList, request, response);
   }
@@ -102,7 +115,7 @@ public class mainController extends HttpServlet {
   }
 
   private void doMissingList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    request.setAttribute("etudiants", GestionFactory.getEtudiants());
+    request.setAttribute("etudiants", EtudiantDAO.getAll());
 
     loadJSP(this.missingList, request, response);
   }
@@ -118,5 +131,13 @@ public class mainController extends HttpServlet {
     request.setAttribute("content", url);
     RequestDispatcher rd = sc.getRequestDispatcher(this.layout);
     rd.forward(request, response);
+  }
+
+  @Override
+  public void destroy() {
+    super.destroy();
+
+    // Fermeture de la factory
+    GestionFactory.close();
   }
 }

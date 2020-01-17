@@ -1,10 +1,11 @@
 <%@ page import="models.Etudiant" %>
 <%@ page import="java.util.Collection" %>
 <%@ page import="models.GestionFactory" %>
+<%@ page import="models.EtudiantDAO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%!
-    Collection<Etudiant> etudiants = GestionFactory.getEtudiants();
+    Collection<Etudiant> etudiants = EtudiantDAO.getAll();
 %>
 
 <html>

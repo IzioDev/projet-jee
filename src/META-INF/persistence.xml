@@ -19,10 +19,10 @@
             <!-- url pointant : -->
             <!--  en SqlLite, sur un fichier de votre arborescence (en windows c:/etc...) -->
             <!--  en MySql, sur une url du serveur par exemple en local http;//localhost:3306 -->
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/iut2_projetjpa"/>
-            <property name="javax.persistence.jdbc.user" value="projetjpa"/>
-            <property name="eclipselink.jdbc.password" value="X3YEbHqrWx5648NW"/>
-            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/api"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="eclipselink.jdbc.password" value="password"/>
+            <property name="javax.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver" />
 
             <!-- Propriétés propre à EclipseLink -->
             <!-- EclipseLink should create the database schema automatically -->

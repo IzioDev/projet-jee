@@ -19,10 +19,16 @@
 <nav class="nav-container">
         <%-- Liste des étudiants --%>
     <a class="nav-item" href="${pageContext.request.contextPath}/do/index"> Accueil </a>
+
+    <a class="nav-item" href="${pageContext.request.contextPath}/do/moduleList"> Les modules </a>
         <%-- Liste de notes --%>
-    <a class="nav-item" href="${pageContext.request.contextPath}/do/marksList"> Consulter les notes </a>
+    <a class="nav-item" href="${pageContext.request.contextPath}/do/marksList"> Les notes </a>
+<%--
     <a class="nav-item" href="${pageContext.request.contextPath}/do/marksEdit"> Modifier les notes </a>
+--%>
         <%-- Liste des abscences --%>
-    <a class="nav-item" href="${pageContext.request.contextPath}/do/missingList"> Consulter les abscences </a>
+    <a class="nav-item" href="${pageContext.request.contextPath}/do/missingList"> Les abscences </a>
+<%--
     <a class="nav-item" href="${pageContext.request.contextPath}/do/missingEdit"> Modifier les abscences </a>
+--%>
 </nav>

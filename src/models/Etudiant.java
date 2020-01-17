@@ -1,61 +1,81 @@
 package models;
 
-public class Etudiant {
+
+import javax.persistence.*;
+import java.io.Serializable;
+
+/**
+ * Entity implementation class for Entity: Groupe
+ *
+ */
+@Entity
+public class Etudiant implements Serializable {
 	
+	@Id
+	@GeneratedValue
 	private Integer id;
-	private String prenom;
-	private String nom;
-	private int nbAbsence;
-	private int mean;
 	
+	@Column(nullable=false)
+	private String prenom;
+	
+	@Column(nullable=false)
+	private String nom;
+
+	private int nbAbsences;
+	
+	@ManyToOne
+	private Groupe groupe;
+	
+	private static final long serialVersionUID = 1L;
+
 	public Etudiant() {
 		super();
-	}
-
-	public Etudiant(Integer id, String prenom, String nom) {
-		super();
-		this.id = id;
-		this.prenom = prenom;
-		this.nom = nom;
-	}
-
+		nbAbsences = 0;
+	}  
+	
 	public Integer getId() {
-		return id;
+		return this.id;
 	}
 
 	public void setId(Integer id) {
 		this.id = id;
-	}
-
+	}   
 	public String getPrenom() {
-		return prenom;
+		return this.prenom;
 	}
 
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
-	}
-
+	}   
 	public String getNom() {
-		return nom;
+		return this.nom;
 	}
 
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-
-	public int getNbAbsence() {
-		return nbAbsence;
+	
+	public Groupe getGroupe() {
+		return this.groupe;
+	}
+	
+	public void setGroupe(Groupe groupe) {
+        this.groupe = groupe;
+        if (!groupe.getEtudiants().contains(this)) {
+        	groupe.getEtudiants().add(this);
+        }
+    }
+	
+	public int getNbAbsences() {
+		return nbAbsences;
 	}
 
-	public void setNbAbsence(int nbAbsence) {
-		this.nbAbsence = nbAbsence;
+	public void setNbAbsences(int nbAbsences) {
+		this.nbAbsences = nbAbsences;
 	}
-
-	public int getMean() {
-		return mean;
-	}
-
-	public void setMean(int mean) {
-		this.mean = mean;
+   
+	@Override
+	public String toString() {
+		return "[" + this.getId() + "] " + this.getPrenom() + " " + this.getNom();
 	}
 }

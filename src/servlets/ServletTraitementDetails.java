@@ -1,6 +1,7 @@
 package servlets;
 
 import models.Etudiant;
+import models.EtudiantDAO;
 import models.GestionFactory;
 
 import javax.servlet.annotation.WebServlet;
@@ -17,9 +18,11 @@ public class ServletTraitementDetails extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, IOException {
 
-        Etudiant etudiant = GestionFactory.getEtudiantById(Integer.parseInt(request.getParameter("etudiantId")));
-        int missingNumber = GestionFactory.getAbsencesByEtudiantId(Integer.parseInt(request.getParameter("etudiantId")));
-        etudiant.setNbAbsence(missingNumber);
+        Integer etudiantId = Integer.parseInt(request.getParameter("etudiantId"));
+        Etudiant etudiant = EtudiantDAO.retrieveById(etudiantId);
+
+        // int missingNumber = GestionFactory.getAbsencesByEtudiantId(Integer.parseInt(request.getParameter("etudiantId")));
+        // etudiant.setNbAbsence(missingNumber);
 
         request.setAttribute("etudiant", etudiant);
 

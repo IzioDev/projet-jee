@@ -1,0 +1,1 @@
+<p>Coucou module</p>

@@ -68,6 +68,11 @@
             <param-value>/WEB-INF/JSP/layout.jsp</param-value>
         </init-param>
 
+        <init-param>
+            <param-name>moduleList</param-name>
+            <param-value>/WEB-INF/JSP/module.jsp</param-value>
+        </init-param>
+
     </servlet>
 
     <!-- Mapping URL/Servlet -->
