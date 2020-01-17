@@ -119,9 +119,6 @@ public class mainController extends HttpServlet {
 
     String moduleNameParameter = request.getParameter("name");
 
-    // String moduleCoeffParameter = request.getParameter("coeff");
-    // && moduleCoeffParameter != null
-
     if (moduleNameParameter != null) {
       ModuleDAO.create(moduleNameParameter);
 

@@ -7,21 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1fc610b0-4aaa-4495-9e59-7f6eab52958a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/billotr_jee.iml" beforeDir="false" afterPath="$PROJECT_DIR$/billotr_jee.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/JSP/module.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/JSP/module.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/JSP/moduleEdit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/JSP/moduleEdit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/classes/controllers/mainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/classes/controllers/mainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/classes/models/ModuleDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/classes/models/ModuleDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/billotr_jee/controllers/mainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/billotr_jee/controllers/mainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/billotr_jee/models/ModuleDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/billotr_jee/models/ModuleDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/mainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/mainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/ModuleDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ModuleDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/JSP/layout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/JSP/layout.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/JSP/module.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/JSP/module.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/JSP/moduleEdit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/JSP/moduleEdit.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -373,7 +359,7 @@
       <workItem from="1576572267495" duration="759000" />
       <workItem from="1576584612693" duration="11231000" />
       <workItem from="1579251982450" duration="4089000" />
-      <workItem from="1579263157916" duration="11355000" />
+      <workItem from="1579263157916" duration="11421000" />
     </task>
     <servers />
   </component>
