@@ -73,6 +73,11 @@
             <param-value>/WEB-INF/JSP/module.jsp</param-value>
         </init-param>
 
+        <init-param>
+            <param-name>moduleEdit</param-name>
+            <param-value>/WEB-INF/JSP/moduleEdit.jsp</param-value>
+        </init-param>
+
     </servlet>
 
     <!-- Mapping URL/Servlet -->

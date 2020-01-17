@@ -3,6 +3,8 @@ package controllers;
 import models.Etudiant;
 import models.EtudiantDAO;
 import models.GestionFactory;
+import models.Module;
+import models.ModuleDAO;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -11,6 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 
 public class mainController extends HttpServlet {
@@ -23,9 +27,12 @@ public class mainController extends HttpServlet {
   private String missingList;
   private String missingEdit;
   private String layout;
+  private String moduleList;
+  private String moduleEdit;
 
   // Logger
   Logger logger = Logger.getLogger(getClass().getName());
+
 
   // Init
   public void init() {
@@ -37,6 +44,8 @@ public class mainController extends HttpServlet {
     missingList = getInitParameter("missingList");
     missingEdit = getInitParameter("missingEdit");
     layout = getInitParameter("layout");
+    moduleList = getInitParameter("moduleList");
+    moduleEdit = getInitParameter("moduleEdit");
 
     GestionFactory.open();
   }
@@ -82,9 +91,42 @@ public class mainController extends HttpServlet {
       case "/missingEdit":
         doMissingEdit(request, response);
         break;
+      case "/moduleList":
+        doModuleList(request, response);
+        break;
+      case "/moduleEdit":
+        doModuleEdit(request, response);
       default:
         throw new ServletException();
     }
+  }
+
+  private void doModuleEdit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    String stringId = request.getParameter("id");
+
+    String moduleNameParameter = request.getParameter("name");
+    String moduleCoeffParameter = request.getParameter("coeff");
+
+    if (moduleNameParameter != null && moduleCoeffParameter != null) {
+      ModuleDAO.create(moduleNameParameter);
+
+      doModuleList(request, response);
+      return;
+    }
+
+    if ( stringId != null) {
+      request.setAttribute("isCreation", Boolean.FALSE);
+    } else {
+      request.setAttribute("isCreation", Boolean.TRUE);
+      loadJSP(this.moduleEdit, request, response);
+    }
+  }
+
+  private void doModuleList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    List<Module> modules = ModuleDAO.getAll();
+
+    request.setAttribute("modules", modules);
+    loadJSP(this.moduleList, request, response);
   }
 
   private void doIndex(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
