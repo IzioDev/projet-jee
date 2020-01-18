@@ -78,6 +78,11 @@
             <param-value>/WEB-INF/JSP/moduleEdit.jsp</param-value>
         </init-param>
 
+        <init-param>
+            <param-name>groupEdit</param-name>
+            <param-value>/WEB-INF/JSP/group_edit.jsp</param-value>
+        </init-param>
+
     </servlet>
 
     <!-- Mapping URL/Servlet -->
