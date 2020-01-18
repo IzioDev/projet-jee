@@ -16,7 +16,6 @@ public class GestionFactory {
 	// Factory pour la création d'EntityManager (gestion des transactions)
 	public static EntityManagerFactory factory;
 	
-	
 	// Creation de la factory
 	public static void open() {
 		factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);;

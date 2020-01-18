@@ -6,7 +6,7 @@
 <% for (Module module: modules) {%>
     <li>
         <p><%= module.getNom()%>
-            <a style="text-decoration: none;" href="${pageContext.request.contextPath}/do/moduleDelete?id=<%=module.getId()%>">
+            <a style="text-decoration: none;" href="${pageContext.request.contextPath}/do/moduleEdit?id=<%=module.getId()%>">
                 <i style="color: orange;" class="material-icons md-36">create</i>
             </a>
 

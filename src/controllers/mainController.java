@@ -113,25 +113,38 @@ public class mainController extends HttpServlet {
     response.sendRedirect(request.getContextPath() + "/do/moduleList");
   }
 
-
   private void doModuleEdit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     String stringId = request.getParameter("id");
 
     String moduleNameParameter = request.getParameter("name");
+    String moduleIdParameter = request.getParameter("id");
 
+    // It's a form submit
     if (moduleNameParameter != null) {
-      ModuleDAO.create(moduleNameParameter);
+      // It's a form edit
+      if (moduleIdParameter != null) {
+        Integer moduleId = Integer.valueOf(moduleIdParameter);
+        Module module = ModuleDAO.retrieveById(moduleId);
+        module.setNom(moduleNameParameter);
+        ModuleDAO.update(module);
+      } else {
+        ModuleDAO.create(moduleNameParameter);
+      }
 
       response.sendRedirect(request.getContextPath() + "/do/moduleList");
       return;
     }
 
     if ( stringId != null) {
+      Integer id = Integer.valueOf(stringId);
       request.setAttribute("isCreation", Boolean.FALSE);
+      request.setAttribute("module", ModuleDAO.retrieveById(id));
     } else {
       request.setAttribute("isCreation", Boolean.TRUE);
-      loadJSP(this.moduleEdit, request, response);
+      request.setAttribute("module", null);
     }
+
+    loadJSP(this.moduleEdit, request, response);
   }
 
   private void doModuleList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

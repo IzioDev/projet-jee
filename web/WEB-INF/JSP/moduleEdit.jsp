@@ -8,13 +8,24 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <jsp:useBean id="isCreation" class="java.lang.Boolean" scope="request"/>
+<jsp:useBean id="module" class="models.Module" scope="request"/>
+
+
 
 <h2><%= isCreation? "Création d'un module": "Edition d'un module" %></h2>
 <form method="post">
     <label>
         Nom :
-        <input name="name" type="text" placeholder="MI5"/>
+        <input name="name" type="text" value="<%= !isCreation? module.getNom() : "" %>" placeholder="MI5"/>
     </label>
+
+    <%
+        if (!isCreation) {
+    %>
+        <input name="id" type="hidden" value="<%= module.getId() %>">
+    <%
+        }
+    %>
 
 <%--    <label>--%>
 <%--        Coefficiant :--%>
