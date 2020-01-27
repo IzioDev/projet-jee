@@ -1,10 +1,7 @@
 package controllers;
 
-import models.Etudiant;
-import models.EtudiantDAO;
-import models.GestionFactory;
+import models.*;
 import models.Module;
-import models.ModuleDAO;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -29,6 +26,7 @@ public class mainController extends HttpServlet {
   private String layout;
   private String moduleList;
   private String moduleEdit;
+  private String groupEdit;
 
   // Logger
   Logger logger = Logger.getLogger(getClass().getName());
@@ -46,6 +44,7 @@ public class mainController extends HttpServlet {
     layout = getInitParameter("layout");
     moduleList = getInitParameter("moduleList");
     moduleEdit = getInitParameter("moduleEdit");
+    groupEdit = getInitParameter("groupEdit");
 
     try {
       GestionFactory.open();
@@ -104,9 +103,55 @@ public class mainController extends HttpServlet {
       case "/moduleDelete":
         doModuleDelete(request, response);
         break;
+      case "/groupEdit":
+        doGroupEdit(request, response);
+        break;
+      case "/groupDelete":
+        doGroupDelete(request, response);
+        break;
       default:
         throw new ServletException();
     }
+  }
+
+  private void doGroupEdit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    String groupNameParameter = request.getParameter("name");
+    String groupIdParameter = request.getParameter("id");
+
+    // It's a form submit
+    if (groupNameParameter != null) {
+      // It's a form edit
+      if (groupIdParameter != null) {
+        Integer groupId = Integer.valueOf(groupIdParameter);
+        Groupe group = GroupeDAO.retrieveById(groupId);
+        group.setNom(groupNameParameter);
+        GroupeDAO.update(group);
+      } else {
+        GroupeDAO.create(groupNameParameter);
+      }
+
+      response.sendRedirect(request.getContextPath() + "/do/index");
+      return;
+    }
+
+    if ( groupIdParameter != null) {
+      Integer id = Integer.valueOf(groupIdParameter);
+      request.setAttribute("isCreation", Boolean.FALSE);
+      request.setAttribute("group", GroupeDAO.retrieveById(id));
+    } else {
+      request.setAttribute("isCreation", Boolean.TRUE);
+      request.setAttribute("group", null);
+    }
+
+    loadJSP(this.groupEdit, request, response);
+  }
+
+  private void doGroupDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    String stringId = request.getParameter("id");
+    Integer id = Integer.valueOf(stringId);
+
+    GroupeDAO.remove(id);
+    response.sendRedirect(request.getContextPath() + "/do/index");
   }
 
   private void doModuleDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -117,25 +162,36 @@ public class mainController extends HttpServlet {
     response.sendRedirect(request.getContextPath() + "/do/moduleList");
   }
 
-
   private void doModuleEdit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    String stringId = request.getParameter("id");
-
     String moduleNameParameter = request.getParameter("name");
+    String moduleIdParameter = request.getParameter("id");
 
+    // It's a form submit
     if (moduleNameParameter != null) {
-      ModuleDAO.create(moduleNameParameter);
+      // It's a form edit
+      if (moduleIdParameter != null) {
+        Integer moduleId = Integer.valueOf(moduleIdParameter);
+        Module module = ModuleDAO.retrieveById(moduleId);
+        module.setNom(moduleNameParameter);
+        ModuleDAO.update(module);
+      } else {
+        ModuleDAO.create(moduleNameParameter);
+      }
 
       response.sendRedirect(request.getContextPath() + "/do/moduleList");
       return;
     }
 
-    if ( stringId != null) {
+    if ( moduleIdParameter != null) {
+      Integer id = Integer.valueOf(moduleIdParameter);
       request.setAttribute("isCreation", Boolean.FALSE);
+      request.setAttribute("module", ModuleDAO.retrieveById(id));
     } else {
       request.setAttribute("isCreation", Boolean.TRUE);
-      loadJSP(this.moduleEdit, request, response);
+      request.setAttribute("module", null);
     }
+
+    loadJSP(this.moduleEdit, request, response);
   }
 
   private void doModuleList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -146,6 +202,8 @@ public class mainController extends HttpServlet {
   }
 
   private void doIndex(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    request.setAttribute("groups", GroupeDAO.getAll());
+
     loadJSP(this.indexUri, request, response);
   }
 

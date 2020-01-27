@@ -21,5 +21,7 @@
 
 <jsp:include page="<%=content%>" />
 
+<jsp:include page='<%= application.getInitParameter(\"footer\")%>' />
+
 </body>
 </html>

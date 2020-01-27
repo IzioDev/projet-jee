@@ -1,30 +1,26 @@
 <%@ page import="models.Etudiant" %>
 <%@ page import="java.util.Collection" %>
-<%@ page import="models.GestionFactory" %>
 <%@ page import="models.EtudiantDAO" %>
+<%@ page import="models.Groupe" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<%!
-    Collection<Etudiant> etudiants = EtudiantDAO.getAll();
-%>
+<jsp:useBean id="groups" type="java.util.List<models.Groupe>" scope="request"/>
 
-<html>
-<title>Gestion des étudiants</title>
-<body>
-    <div style="margin-left: 10%; margin-right: 10%;">
-        <p>Cliquez sur un étudiant pour voir le détail de l'étudiant.</p>
+<a href="${pageContext.request.contextPath}/do/groupEdit">Nouveau Groupe</a>
 
-        <div style="margin-top: 12px">
-            <% for (Etudiant etudiant : etudiants) { %>
-            <div>
-                <a href="${pageContext.request.contextPath}/do/studentDetails?studentId=<%=etudiant.getId()%>"><%= etudiant.getNom() + " " + etudiant.getPrenom() %>
-                </a>
-            </div>
-            <%}%>
-        </div>
+<ul>
+    <% for (Groupe group: groups) {%>
+    <li>
+        <p><%= group.getNom()%>
+            <a style="text-decoration: none;" href="${pageContext.request.contextPath}/do/groupEdit?id=<%=group.getId()%>">
+                <i style="color: orange;" class="material-icons md-36">create</i>
+            </a>
 
-    </div>
+            <a style="text-decoration: none;" href="${pageContext.request.contextPath}/do/groupDelete?id=<%=group.getId()%>">
+                <i style="color: red;" class="material-icons md-36">delete_forever</i>
+            </a>
+        </p>
+    </li>
+    <%} %>
+</ul>
 
-    <jsp:include page='<%= application.getInitParameter("footer")%>' />
-</body>
-</html>
