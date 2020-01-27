@@ -3,11 +3,47 @@
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="billotr_jee:war exploded" />
+      <artifact name="billotr_jee:war2" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1fc610b0-4aaa-4495-9e59-7f6eab52958a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/billotr_jee_war2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_mysql_connector_java_5_1_48.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/billotr_jee_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/billotr_jee_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_mysql_connector_java_8_0_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/billotr_jee.iml" beforeDir="false" afterPath="$PROJECT_DIR$/billotr_jee.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/classes/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/classes/controllers/mainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/classes/controllers/mainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/classes/models/Etudiant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/classes/models/Etudiant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/classes/models/EtudiantDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/classes/models/EtudiantDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/classes/models/GestionFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/classes/models/GestionFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/classes/models/Groupe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/classes/models/Groupe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/classes/models/GroupeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/classes/models/GroupeDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/classes/models/Module.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/classes/models/Module.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/classes/models/ModuleDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/classes/models/ModuleDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/classes/models/TestAbsences.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/classes/models/TestAbsences.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/classes/servlets/ServletTraitementDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/classes/servlets/ServletTraitementDetails.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/lib/mysql-connector-java-8.0.19.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/billotr_jee_war_exploded/WEB-INF/lib/protobuf-java-3.6.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/billotr_jee/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/billotr_jee/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/billotr_jee/controllers/mainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/billotr_jee/controllers/mainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/billotr_jee/models/Etudiant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/billotr_jee/models/Etudiant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/billotr_jee/models/EtudiantDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/billotr_jee/models/EtudiantDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/billotr_jee/models/GestionFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/billotr_jee/models/GestionFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/billotr_jee/models/Groupe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/billotr_jee/models/Groupe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/billotr_jee/models/GroupeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/billotr_jee/models/GroupeDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/billotr_jee/models/Module.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/billotr_jee/models/Module.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/billotr_jee/models/ModuleDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/billotr_jee/models/ModuleDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/billotr_jee/models/TestAbsences.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/billotr_jee/models/TestAbsences.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/billotr_jee/servlets/ServletTraitementDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/billotr_jee/servlets/ServletTraitementDetails.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/mainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/mainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/GestionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/GestionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/TestAbsences.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/TestAbsences.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +120,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="/tmp/ProjetJPA2" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.2437107" />
     <property name="project.structure.side.proportion" value="0.31178707" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -324,16 +360,7 @@
               </path>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="GlassFish Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:JEE" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -360,6 +387,7 @@
       <workItem from="1576584612693" duration="11231000" />
       <workItem from="1579251982450" duration="4089000" />
       <workItem from="1579263157916" duration="11421000" />
+      <workItem from="1580138028058" duration="3729000" />
     </task>
     <servers />
   </component>
@@ -398,10 +426,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="690" y="237" width="530" height="498" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1576591158755" />
-    <state x="690" y="260" width="530" height="483" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1579258279248">
+    <state x="672" y="104" width="530" height="483" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1580140626824">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="690" y="260" width="530" height="483" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1579258279248" />
+    <state x="672" y="104" width="530" height="483" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1580140626824" />
     <state x="699" y="-94" width="592" height="483" key="FileChooserDialogImpl" timestamp="1579269756556">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -474,14 +502,14 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="193" height="536" key="HiddenNamespacesPopup/0.0.1920.1080@0.0.1920.1080" timestamp="1579271371457" />
-    <state x="0" y="0" width="1920" height="1080" key="SettingsEditor" timestamp="1579273024233">
+    <state x="0" y="0" width="1920" height="1080" key="SettingsEditor" timestamp="1580141218850">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="0" y="0" width="1920" height="1080" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1579273024233" />
-    <state x="643" y="98" width="558" height="218" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1579267334351">
+    <state x="0" y="0" width="1920" height="1080" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1580141218850" />
+    <state x="640" y="72" width="558" height="218" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1580140045049">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="643" y="98" width="558" height="218" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1080@0.0.1920.1080" timestamp="1579267334351" />
+    <state x="640" y="72" width="558" height="218" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1080@0.0.1920.1080" timestamp="1580140045049" />
     <state x="368" y="74" width="1174" height="824" key="new project wizard" timestamp="1579257405325">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

@@ -1,4 +1,9 @@
 # Projet JEE
+## PORT:
+
+http://ellsworth.iut2.upmf-grenoble.fr:7280/
+
+https://ellsworth.iut2.upmf-grenoble.fr:7248/
 ## Notes
 La branche master contient le TP2 sous glassfish.
 

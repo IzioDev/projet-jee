@@ -47,7 +47,11 @@ public class mainController extends HttpServlet {
     moduleList = getInitParameter("moduleList");
     moduleEdit = getInitParameter("moduleEdit");
 
-    GestionFactory.open();
+    try {
+      GestionFactory.open();
+    } catch (ClassNotFoundException e) {
+      e.printStackTrace();
+    }
   }
 
   public void doPost(HttpServletRequest request, HttpServletResponse response)
