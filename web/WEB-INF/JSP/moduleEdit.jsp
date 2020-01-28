@@ -13,10 +13,10 @@
 
 
 <h2><%= isCreation? "Création d'un module": "Edition d'un module" %></h2>
-<form method="post">
+<form method="post" accept-charset="UTF-8">
     <label>
         Nom :
-        <input name="name" type="text" value="<%= !isCreation? module.getNom() : "" %>" placeholder="MI5"/>
+        <input name="name" required type="text" value="<%= !isCreation? module.getNom() : "" %>" placeholder="MI5"/>
     </label>
 
     <%
@@ -32,6 +32,6 @@
 <%--        <input name="coeff" type="number" placeholder="25"/>--%>
 <%--    </label>--%>
 
-    <button type="submit"><%= isCreation? "Créer": "Modifier" %></button>
+    <button type="submit" class="btn btn-success"><%= isCreation? "Créer": "Modifier" %></button>
 
 </form>

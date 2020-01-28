@@ -6,20 +6,46 @@
 
 <jsp:useBean id="groups" type="java.util.List<models.Groupe>" scope="request"/>
 
-<a href="${pageContext.request.contextPath}/do/groupEdit">Nouveau Groupe</a>
+<style>
+    html, body {
+        margin: 0;
+    }
 
-<ul>
-    <% for (Groupe group: groups) {%>
+    .action-item {
+        font-size: 36px;
+    }
+
+    .group-item {
+        font-size: 26px;
+        color: #4f6bff;
+        display: inline;
+    }
+    .group-item:hover {
+        color: #ff7246;
+        cursor: pointer;
+    }
+</style>
+
+<a href="${pageContext.request.contextPath}/do/groupEdit" class="btn btn-success">Nouveau Groupe</a>
+
+<ul style="margin-top: 24px;">
+    <% for (Groupe group: groups) {
+        String nomGroupe = group.getNom();
+    %>
     <li>
-        <p><%= group.getNom()%>
-            <a style="text-decoration: none;" href="${pageContext.request.contextPath}/do/groupEdit?id=<%=group.getId()%>">
-                <i style="color: orange;" class="material-icons md-36">create</i>
-            </a>
-
-            <a style="text-decoration: none;" href="${pageContext.request.contextPath}/do/groupDelete?id=<%=group.getId()%>">
-                <i style="color: red;" class="material-icons md-36">delete_forever</i>
-            </a>
+        <p class="group-item" onclick="function onNameClicked() {
+            window.location = `${pageContext.request.contextPath}/do/studentList?id=<%=group.getId()%>`;
+        }
+        onNameClicked()"><%= nomGroupe%>
+            - <%=group.getEtudiants().size()%> étudiant(s)
         </p>
+        <a  style="text-decoration: none;" href="${pageContext.request.contextPath}/do/groupEdit?id=<%=group.getId()%>">
+            <i style="color: orange;" class="action-item material-icons md-36">create</i>
+        </a>
+
+        <a style="text-decoration: none;" href="${pageContext.request.contextPath}/do/groupDelete?id=<%=group.getId()%>">
+            <i  style="color: red;" class="action-item material-icons md-36">delete_forever</i>
+        </a>
     </li>
     <%} %>
 </ul>

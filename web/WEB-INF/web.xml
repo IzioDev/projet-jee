@@ -5,6 +5,14 @@
          version="4.0">
     <display-name>Gestion des étudiants</display-name>
 
+    <jsp-config>
+        <jsp-property-group>
+            <description>Config. de l'encodage des pages JSP</description>
+            <url-pattern>*.jsp</url-pattern>
+            <page-encoding>UTF-8</page-encoding>
+        </jsp-property-group>
+    </jsp-config>
+
     <!-- Titre de l'application -->
     <context-param>
         <param-name>title</param-name>
@@ -39,8 +47,8 @@
         </init-param>
 
         <init-param>
-            <param-name>studentDetails</param-name>
-            <param-value>/WEB-INF/JSP/student_details.jsp</param-value>
+            <param-name>studentList</param-name>
+            <param-value>/WEB-INF/JSP/studentList.jsp</param-value>
         </init-param>
 
         <init-param>

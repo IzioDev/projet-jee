@@ -19,7 +19,7 @@
             <!-- url pointant : -->
             <!--  en SqlLite, sur un fichier de votre arborescence (en windows c:/etc...) -->
             <!--  en MySql, sur une url du serveur par exemple en local http;//localhost:3306 -->
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/api"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/api?useUnicode=true&amp;characterEncoding=UTF-8"/>
             <property name="javax.persistence.jdbc.user" value="root"/>
             <property name="eclipselink.jdbc.password" value="password"/>
             <property name="javax.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver" />
@@ -52,7 +52,7 @@
             <!-- url pointant : -->
             <!--  en SqlLite, sur un fichier de votre arborescence (en windows c:/etc...) -->
             <!--  en MySql, sur une url du serveur par exemple en local http;//localhost:3306 -->
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/etudiant72"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/etudiant72?useUnicode=true&amp;characterEncoding=UTF-8"/>
             <property name="javax.persistence.jdbc.user" value="etudiant72"/>
             <property name="javax.persistence.jdbc.password" value="123456789"/>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />

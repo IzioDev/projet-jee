@@ -17,8 +17,8 @@ import java.util.logging.Logger;
 public class mainController extends HttpServlet {
   // Uri endpoints
   private String indexUri;
-  private String studentDetails;
   private String studentEdit;
+  private String studentList;
   private String marksList;
   private String marksEdit;
   private String missingList;
@@ -35,8 +35,8 @@ public class mainController extends HttpServlet {
   // Init
   public void init() {
     indexUri = getInitParameter("indexUri");
-    studentDetails = getInitParameter("studentDetails");
     studentEdit = getInitParameter("studentEdit");
+    studentList = getInitParameter("studentList");
     marksList = getInitParameter("marksList");
     marksEdit = getInitParameter("marksEdit");
     missingList = getInitParameter("missingList");
@@ -65,6 +65,8 @@ public class mainController extends HttpServlet {
     String method = request.getMethod().toLowerCase();
     String action = request.getPathInfo();
 
+    request.setCharacterEncoding("UTF-8");
+
     if (action == null) {
       action = "/index";
     }
@@ -76,11 +78,14 @@ public class mainController extends HttpServlet {
       case "/index":
         doIndex(request, response);
         break;
-      case "/studentDetails":
-        doStudentDetails(request, response);
+      case "/studentList":
+        doStudentList(request, response);
         break;
       case "/studentEdit":
         doStudentEdit(request, response);
+        break;
+      case "/studentDelete":
+        doStudentDelete(request, response);
         break;
       case "/marksList":
         doMarksList(request, response);
@@ -112,6 +117,64 @@ public class mainController extends HttpServlet {
       default:
         throw new ServletException();
     }
+  }
+
+  private void doStudentDelete(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    String stringId = request.getParameter("id");
+    Integer id = Integer.valueOf(stringId);
+
+    Integer groupId = EtudiantDAO.retrieveById(id).getGroupe().getId();
+    EtudiantDAO.remove(id);
+    response.sendRedirect(request.getContextPath() + "/do/studentList?id=" + groupId);
+  }
+
+  private void doStudentEdit(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    String studentFirstnameParameter = request.getParameter("firstname");
+    String studentLastnameParameter = request.getParameter("lastname");
+    String studentIdParameter = request.getParameter("id");
+    String studentGroupIdParameter = request.getParameter("groupId");
+    String studentNbAbscence = request.getParameter("nbAbscence");
+
+    // It's a form submit
+    if (studentFirstnameParameter != null && studentLastnameParameter != null && studentGroupIdParameter != null && studentNbAbscence != null) {
+      // It's a form edit
+      if (studentIdParameter != null) {
+        Integer studentId = Integer.valueOf(studentIdParameter);
+        Integer groupId = Integer.valueOf(studentGroupIdParameter);
+        Integer nbAbscence = Integer.valueOf(studentNbAbscence);
+
+        Etudiant etudiant = EtudiantDAO.retrieveById(studentId);
+        etudiant.setPrenom(studentFirstnameParameter);
+        etudiant.setNom(studentLastnameParameter);
+        etudiant.setGroupe(GroupeDAO.retrieveById(groupId));
+        etudiant.setNbAbsences(nbAbscence);
+
+        EtudiantDAO.update(etudiant);
+      } else {
+        Integer groupId = Integer.valueOf(studentGroupIdParameter);
+        Integer nbAbscence = Integer.valueOf(studentNbAbscence);
+
+        Etudiant etudiant = EtudiantDAO.create(studentFirstnameParameter, studentLastnameParameter, GroupeDAO.retrieveById(groupId));
+        etudiant.setNbAbsences(nbAbscence);
+
+        EtudiantDAO.update(etudiant);
+      }
+
+      response.sendRedirect(request.getContextPath() + "/do/studentList?id=" + studentGroupIdParameter);
+      return;
+    }
+
+    if (studentIdParameter != null) {
+      Integer id = Integer.valueOf(studentIdParameter);
+      request.setAttribute("isCreation", Boolean.FALSE);
+      request.setAttribute("student", EtudiantDAO.retrieveById(id));
+    } else {
+      request.setAttribute("isCreation", Boolean.TRUE);
+    }
+
+    request.setAttribute("groups", GroupeDAO.getAll());
+
+    loadJSP(this.studentEdit, request, response);
   }
 
   private void doGroupEdit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -172,6 +235,7 @@ public class mainController extends HttpServlet {
       if (moduleIdParameter != null) {
         Integer moduleId = Integer.valueOf(moduleIdParameter);
         Module module = ModuleDAO.retrieveById(moduleId);
+
         module.setNom(moduleNameParameter);
         ModuleDAO.update(module);
       } else {
@@ -207,16 +271,12 @@ public class mainController extends HttpServlet {
     loadJSP(this.indexUri, request, response);
   }
 
-  private void doStudentDetails(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    Integer etudiantId = Integer.parseInt(request.getParameter("studentId"));
-    Etudiant etudiant = EtudiantDAO.retrieveById(etudiantId);
+  private void doStudentList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    Integer groupId = Integer.parseInt(request.getParameter("id"));
+    Groupe group = GroupeDAO.retrieveById(groupId);
 
-    request.setAttribute("etudiant", etudiant);
-    loadJSP(this.studentDetails, request, response);
-  }
-
-  private void doStudentEdit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    loadJSP(this.studentEdit, request, response);
+    request.setAttribute("group", group);
+    loadJSP(this.studentList, request, response);
   }
 
   private void doMarksList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

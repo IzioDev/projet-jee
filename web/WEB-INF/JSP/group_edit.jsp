@@ -11,10 +11,10 @@
 <jsp:useBean id="group" class="models.Groupe" scope="request"/>
 
 <h2><%= isCreation? "Création d'un groupe": "Edition d'un groupe" %></h2>
-<form method="post">
+<form method="post" accept-charset="UTF-8">
     <label>
         Nom :
-        <input name="name" type="text" value="<%= !isCreation? group.getNom() : "" %>" placeholder="AW"/>
+        <input name="name" required type="text" value="<%= !isCreation? group.getNom() : "" %>" placeholder="AW"/>
     </label>
 
     <%
@@ -25,6 +25,6 @@
         }
     %>
 
-    <button type="submit"><%= isCreation? "Créer": "Modifier" %></button>
+    <button type="submit" class="btn btn-success"><%= isCreation? "Créer": "Modifier" %></button>
 
 </form>
