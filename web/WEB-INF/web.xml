@@ -47,8 +47,8 @@
         </init-param>
 
         <init-param>
-            <param-name>studentList</param-name>
-            <param-value>/WEB-INF/JSP/studentList.jsp</param-value>
+            <param-name>groupDetails</param-name>
+            <param-value>/WEB-INF/JSP/groupDetails.jsp</param-value>
         </init-param>
 
         <init-param>

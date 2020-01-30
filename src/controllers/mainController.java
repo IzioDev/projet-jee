@@ -12,13 +12,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 public class mainController extends HttpServlet {
   // Uri endpoints
   private String indexUri;
   private String studentEdit;
-  private String studentList;
+  private String groupDetails;
   private String marksList;
   private String marksEdit;
   private String missingList;
@@ -36,7 +38,7 @@ public class mainController extends HttpServlet {
   public void init() {
     indexUri = getInitParameter("indexUri");
     studentEdit = getInitParameter("studentEdit");
-    studentList = getInitParameter("studentList");
+    groupDetails = getInitParameter("groupDetails");
     marksList = getInitParameter("marksList");
     marksEdit = getInitParameter("marksEdit");
     missingList = getInitParameter("missingList");
@@ -78,7 +80,7 @@ public class mainController extends HttpServlet {
       case "/index":
         doIndex(request, response);
         break;
-      case "/studentList":
+      case "/groupDetails":
         doStudentList(request, response);
         break;
       case "/studentEdit":
@@ -181,16 +183,48 @@ public class mainController extends HttpServlet {
     String groupNameParameter = request.getParameter("name");
     String groupIdParameter = request.getParameter("id");
 
+    Map<String, String[]> parameterMap = request.getParameterMap();
+
     // It's a form submit
     if (groupNameParameter != null) {
       // It's a form edit
+      Groupe currentGroup = null;
       if (groupIdParameter != null) {
         Integer groupId = Integer.valueOf(groupIdParameter);
         Groupe group = GroupeDAO.retrieveById(groupId);
         group.setNom(groupNameParameter);
-        GroupeDAO.update(group);
+        currentGroup = GroupeDAO.update(group);
       } else {
-        GroupeDAO.create(groupNameParameter);
+        currentGroup = GroupeDAO.create(groupNameParameter);
+      }
+
+      // Retrieve wanted modules from parameters
+      List<Module> moduleList = parameterMap.entrySet().stream()
+              .filter(parameter -> parameter.getKey().contains("module-"))
+              .map(parameter -> parameter.getKey().split("-")[1])
+              .map(parameter -> Integer.valueOf(parameter))
+              .map(moduleId -> ModuleDAO.retrieveById(moduleId))
+              .collect(Collectors.toList());
+
+      Groupe finalCurrentGroup = currentGroup;
+      // Delete the notInAnymoreModules
+      currentGroup.getModules().stream()
+              .filter((module) -> moduleList.stream().map(Module::getId).noneMatch(id -> id.equals(module.getId())))
+              .map((module -> {
+                module.removeGroupe(finalCurrentGroup);
+                return ModuleDAO.update(module);
+              }))
+              .collect(Collectors.toList());
+
+      // If there are modules, let's add them
+      if (moduleList.size() > 0) {
+
+        moduleList.forEach(module -> {
+          finalCurrentGroup.addModule(module);
+        });
+        GroupeDAO.update(finalCurrentGroup);
+      } else {
+        GroupeDAO.update(currentGroup);
       }
 
       response.sendRedirect(request.getContextPath() + "/do/index");
@@ -205,6 +239,8 @@ public class mainController extends HttpServlet {
       request.setAttribute("isCreation", Boolean.TRUE);
       request.setAttribute("group", null);
     }
+
+    request.setAttribute("modules", ModuleDAO.getAll());
 
     loadJSP(this.groupEdit, request, response);
   }
@@ -276,7 +312,7 @@ public class mainController extends HttpServlet {
     Groupe group = GroupeDAO.retrieveById(groupId);
 
     request.setAttribute("group", group);
-    loadJSP(this.studentList, request, response);
+    loadJSP(this.groupDetails, request, response);
   }
 
   private void doMarksList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -34,10 +34,10 @@
     %>
     <li>
         <p class="group-item" onclick="function onNameClicked() {
-            window.location = `${pageContext.request.contextPath}/do/studentList?id=<%=group.getId()%>`;
+            window.location = `${pageContext.request.contextPath}/do/groupDetails?id=<%=group.getId()%>`;
         }
         onNameClicked()"><%= nomGroupe%>
-            - <%=group.getEtudiants().size()%> étudiant(s)
+            - <%=group.getEtudiants().size()%> étudiant(s) - <%=group.getModules().size()%> module(s)
         </p>
         <a  style="text-decoration: none;" href="${pageContext.request.contextPath}/do/groupEdit?id=<%=group.getId()%>">
             <i style="color: orange;" class="action-item material-icons md-36">create</i>

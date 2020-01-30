@@ -48,6 +48,10 @@ public class Module implements Serializable {
         //groupe.getModules().add(this);
     }
 
+    public void removeGroupe(Groupe groupe) {
+        groupes.remove(groupe);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
