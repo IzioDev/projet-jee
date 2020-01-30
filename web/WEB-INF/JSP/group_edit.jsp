@@ -48,7 +48,7 @@
 
             boolean found = false;
             for (Module groupModule : groupModules) {
-                if (groupModule.getId() == module.getId()) {
+                if (groupModule.getId().equals(module.getId())) {
                     found = true;
                     break;
                 }
