@@ -20,7 +20,7 @@
 </style>
 <nav class="nav-container">
         <%-- Liste des étudiants --%>
-    <a class="nav-item" href="${pageContext.request.contextPath}/do/index"> Accueil </a>
+    <a class="nav-item" href="${pageContext.request.contextPath}/do/index"> Les groupes </a>
 
     <a class="nav-item" href="${pageContext.request.contextPath}/do/moduleList"> Les modules </a>
 
