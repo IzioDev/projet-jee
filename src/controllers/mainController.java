@@ -162,7 +162,7 @@ public class mainController extends HttpServlet {
         EtudiantDAO.update(etudiant);
       }
 
-      response.sendRedirect(request.getContextPath() + "/do/studentList?id=" + studentGroupIdParameter);
+      response.sendRedirect(request.getContextPath() + "/do/groupDetails?id=" + studentGroupIdParameter);
       return;
     }
 
