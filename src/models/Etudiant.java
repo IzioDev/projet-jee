@@ -3,6 +3,7 @@ package models;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Entity implementation class for Entity: Groupe
@@ -25,6 +26,9 @@ public class Etudiant implements Serializable {
 	
 	@ManyToOne
 	private Groupe groupe;
+
+	@OneToMany(mappedBy="etudiant", fetch= FetchType.LAZY)
+	private List<Note> notes;
 	
 	private static final long serialVersionUID = 1L;
 
@@ -72,6 +76,21 @@ public class Etudiant implements Serializable {
 
 	public void setNbAbsences(int nbAbsences) {
 		this.nbAbsences = nbAbsences;
+	}
+
+	public List<Note> getNotes() {
+		return this.notes;
+	}
+
+	public void addNote(Note note) {
+		if (!notes.contains(note)) {
+			notes.add(note);
+			note.setEtudiant(this);
+		}
+	}
+
+	public void removeNote(Note note) {
+			this.notes.remove(note);
 	}
    
 	@Override

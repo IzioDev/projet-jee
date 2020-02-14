@@ -52,7 +52,7 @@
     </label>
 
     <label class="form-group">
-        Nom d'abscence(s) :
+        Nombre d'absence(s) :
         <input name="nbAbscence" min="0" type="number" required value="<%= !isCreation? student.getNbAbsences() : 0 %>" placeholder="0"/>
     </label>
 

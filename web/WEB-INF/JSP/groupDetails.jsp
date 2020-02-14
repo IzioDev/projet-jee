@@ -1,4 +1,5 @@
 <%@ page import="models.Etudiant" %>
+<%@ page import="models.Note" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:useBean id="group" class="models.Groupe" scope="request"/>
 
@@ -12,15 +13,29 @@
 <ul>
 <%
     for (Etudiant etudiant: group.getEtudiants()) {
+      float moyenne = -1;
+      float sum = 0;
+      for (Note note: etudiant.getNotes()) {
+        sum += note.getAmount();
+      }
+
+      if (etudiant.getNotes().size() > 0) {
+          moyenne = sum / etudiant.getNotes().size();
+          moyenne = (float) Math.ceil(moyenne * 100) / 100;
+      }
 %>
   <li style="font-size: 26px;">
-      <%= etudiant.getPrenom()%> <%= etudiant.getNom() %> - <%= etudiant.getNbAbsences() %> abscence(s)
+      <%= etudiant.getPrenom()%> <%= etudiant.getNom() %> - <%= etudiant.getNbAbsences() %> abscence(s) - <%= moyenne != -1 ? moyenne + " de moyenne" : "Pas de notes"%>
       <a  style="text-decoration: none;" href="${pageContext.request.contextPath}/do/studentEdit?id=<%=etudiant.getId()%>">
           <i style="color: orange;" class="action-item material-icons md-36">create</i>
       </a>
 
       <a style="text-decoration: none;" href="${pageContext.request.contextPath}/do/studentDelete?id=<%=etudiant.getId()%>">
           <i  style="color: red;" class="action-item material-icons md-36">delete_forever</i>
+      </a>
+
+      <a style="text-decoration: none;" href="${pageContext.request.contextPath}/do/addMark?id=<%=etudiant.getId()%>">
+          <i  style="color: green;" class="action-item material-icons md-36">note_add</i>
       </a>
   </li>
 <%

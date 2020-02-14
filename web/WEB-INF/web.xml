@@ -52,16 +52,6 @@
         </init-param>
 
         <init-param>
-            <param-name>marksList</param-name>
-            <param-value>/WEB-INF/JSP/marks_list.jsp</param-value>
-        </init-param>
-
-        <init-param>
-            <param-name>marksEdit</param-name>
-            <param-value>/WEB-INF/JSP/marks_edit.jsp</param-value>
-        </init-param>
-
-        <init-param>
             <param-name>missingList</param-name>
             <param-value>/WEB-INF/JSP/missing_list.jsp</param-value>
         </init-param>
@@ -89,6 +79,11 @@
         <init-param>
             <param-name>groupEdit</param-name>
             <param-value>/WEB-INF/JSP/group_edit.jsp</param-value>
+        </init-param>
+
+        <init-param>
+            <param-name>addMark</param-name>
+            <param-value>/WEB-INF/JSP/addMark.jsp</param-value>
         </init-param>
 
     </servlet>

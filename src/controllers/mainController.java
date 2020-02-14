@@ -29,6 +29,7 @@ public class mainController extends HttpServlet {
   private String moduleList;
   private String moduleEdit;
   private String groupEdit;
+  private String addMark;
 
   // Logger
   Logger logger = Logger.getLogger(getClass().getName());
@@ -47,6 +48,7 @@ public class mainController extends HttpServlet {
     moduleList = getInitParameter("moduleList");
     moduleEdit = getInitParameter("moduleEdit");
     groupEdit = getInitParameter("groupEdit");
+    addMark = getInitParameter("addMark");
 
     try {
       GestionFactory.open();
@@ -116,9 +118,33 @@ public class mainController extends HttpServlet {
       case "/groupDelete":
         doGroupDelete(request, response);
         break;
+      case "/addMark":
+        doAddMark(request, response);
+        break;
       default:
         throw new ServletException();
     }
+  }
+
+  private void doAddMark(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    String stringId = request.getParameter("id");
+    String noteString = request.getParameter("note");
+
+    Integer id = Integer.valueOf(stringId);
+    Etudiant etudiant = EtudiantDAO.retrieveById(id);
+
+    if (noteString != null) {
+      float note = Float.parseFloat(noteString);
+      NoteDAO.create(etudiant, note);
+
+      response.sendRedirect(request.getContextPath() + "/do/index");
+      return;
+    }
+
+
+    request.setAttribute("etudiant", etudiant);
+
+    loadJSP(this.addMark, request, response);
   }
 
   private void doStudentDelete(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -127,7 +153,7 @@ public class mainController extends HttpServlet {
 
     Integer groupId = EtudiantDAO.retrieveById(id).getGroupe().getId();
     EtudiantDAO.remove(id);
-    response.sendRedirect(request.getContextPath() + "/do/studentList?id=" + groupId);
+    response.sendRedirect(request.getContextPath() + "/do/groupDetails?id=" + groupId);
   }
 
   private void doStudentEdit(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {

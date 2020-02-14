@@ -11,6 +11,7 @@
         <class>models.Etudiant</class>
         <class>models.Groupe</class>
         <class>models.Module</class>
+        <class>models.Note</class>
 
         <!-- Propriétés de l'unité de persistence -->
         <properties>
@@ -44,6 +45,7 @@
         <class>models.Etudiant</class>
         <class>models.Groupe</class>
         <class>models.Module</class>
+        <class>models.Note</class>
 
         <!-- Propriétés de l'unité de persistence -->
         <properties>
