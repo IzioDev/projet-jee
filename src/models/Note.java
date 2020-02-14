@@ -31,4 +31,8 @@ public class Note implements Serializable {
   public void setAmount(Float amount) {
     this.amount = amount;
   }
+
+  public Integer getId() {
+    return id;
+  }
 }

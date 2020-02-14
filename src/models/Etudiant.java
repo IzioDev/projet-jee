@@ -92,6 +92,20 @@ public class Etudiant implements Serializable {
 	public void removeNote(Note note) {
 			this.notes.remove(note);
 	}
+
+	public float getMoyenne() {
+
+		if (this.notes.size() == 0 ) {
+			return -1;
+		}
+		float sum = 0;
+
+		for (Note note: this.notes) {
+			sum += note.getAmount();
+		}
+
+		return (float) Math.ceil((sum / this.notes.size() ) * 100) / 100;
+	}
    
 	@Override
 	public String toString() {

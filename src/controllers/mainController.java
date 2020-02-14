@@ -30,6 +30,7 @@ public class mainController extends HttpServlet {
   private String moduleEdit;
   private String groupEdit;
   private String addMark;
+  private String studentDetail;
 
   // Logger
   Logger logger = Logger.getLogger(getClass().getName());
@@ -49,6 +50,7 @@ public class mainController extends HttpServlet {
     moduleEdit = getInitParameter("moduleEdit");
     groupEdit = getInitParameter("groupEdit");
     addMark = getInitParameter("addMark");
+    studentDetail = getInitParameter("studentDetail");
 
     try {
       GestionFactory.open();
@@ -91,11 +93,17 @@ public class mainController extends HttpServlet {
       case "/studentDelete":
         doStudentDelete(request, response);
         break;
+      case "/studentDetail":
+        doStudentDetail(request, response);
+        break;
       case "/marksList":
         doMarksList(request, response);
         break;
       case "/marksEdit":
         doMarksEdit(request, response);
+        break;
+      case "/markDelete":
+        doMarkDelete(request, response);
         break;
       case "/missingList":
         doMissingList(request, response);
@@ -126,6 +134,29 @@ public class mainController extends HttpServlet {
     }
   }
 
+  private void doMarkDelete(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    String id = request.getParameter("id");
+
+    Integer noteId = Integer.valueOf(id);
+    Note note = NoteDAO.retrieveById(noteId);
+    Etudiant etudiant = note.getEtudiant();
+
+    NoteDAO.remove(note);
+
+    response.sendRedirect(request.getContextPath() + "/do/studentDetail?id=" + etudiant.getId());
+  }
+
+  private void doStudentDetail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    String stringId = request.getParameter("id");
+
+    Integer id = Integer.valueOf(stringId);
+    Etudiant etudiant = EtudiantDAO.retrieveById(id);
+
+    request.setAttribute("etudiant", etudiant);
+
+    loadJSP(this.studentDetail, request, response);
+  }
+
   private void doAddMark(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     String stringId = request.getParameter("id");
     String noteString = request.getParameter("note");
@@ -137,7 +168,7 @@ public class mainController extends HttpServlet {
       float note = Float.parseFloat(noteString);
       NoteDAO.create(etudiant, note);
 
-      response.sendRedirect(request.getContextPath() + "/do/index");
+      response.sendRedirect(request.getContextPath() + "/do/studentDetail?id=" + etudiant.getId());
       return;
     }
 
